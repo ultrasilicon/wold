@@ -5,7 +5,7 @@ import subprocess
 
 def wake(label):
     if label == 'tornado':
-        subprocess.run(['wakeonlan', 'a8:5e:45:50:6c:71'])
+        subprocess.run(['wakeonlan', '-p', '40000', 'a8:5e:45:50:6c:71'])
         print(f'magic packet sent to: {label}')
     else:
         print(f'device not recognized: {label}')
