@@ -7,9 +7,11 @@ def wake(label):
     if label == 'tornado':
         subprocess.run(['wakeonlan', '-p', '40000', 'a8:5e:45:50:6c:71'])
         print(f'magic packet sent to: {label}')
+    if label == 'turbine':
+        subprocess.run(['wakeonlan', '00:1d:09:91:42:04'])
+        print(f'magic packet sent to: {label}')
     else:
         print(f'device not recognized: {label}')
-
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
